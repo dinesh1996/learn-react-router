@@ -16,7 +16,7 @@ function App() {
           element={<Home title='Welcome to Red30 Tech' />}
         ></Route>
         <Route path='/categories' element={<Categories />}>
-          <Route path='category' element={<Category />} />
+          <Route path=':categoryId' element={<Category />} />
         </Route>
 
         <Route path='/about' element={<About />} />
