@@ -4,6 +4,7 @@ import Home from './Home'
 import Categories from './Categories'
 import About from './About'
 import Header from './Header'
+import Category from './Category'
 
 function App() {
   return (
@@ -14,7 +15,10 @@ function App() {
           path='/'
           element={<Home title='Welcome to Red30 Tech' />}
         ></Route>
-        <Route path='/categories' element={<Categories />} />
+        <Route path='/categories' element={<Categories />}>
+          <Route path='category' element={<Category />} />
+        </Route>
+
         <Route path='/about' element={<About />} />
       </Routes>
       <footer className='container'>
