@@ -20,6 +20,10 @@ function App() {
         </Route>
 
         <Route path='/about' element={<About />} />
+        <Route
+          path='*'
+          element={<h1 className='not-found'>Page Not Found</h1>}
+        />
       </Routes>
       <footer className='container'>
         &copy;2022 | <a href='https://red30tech.com/'>Red30 Tech</a>
