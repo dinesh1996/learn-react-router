@@ -20,6 +20,7 @@ function App() {
           <Route path=':categoryId' element={<Category />}>
             <Route path=':sessionId' element={<Session />} />
           </Route>
+          <Route index element={<h3>Select a category from above</h3>} />
         </Route>
 
         <Route path='/about' element={<About />} />
