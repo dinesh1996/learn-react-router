@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import { getCategories } from '../api'
 export default function Categories() {
   const categories = getCategories()
@@ -10,7 +10,14 @@ export default function Categories() {
           <ul className='categories'>
             {categories.map((category) => (
               <li key={category.id}>
-                <Link to={category.id}>{category.name}</Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? 'category-active' : null
+                  }
+                  to={category.id}
+                >
+                  {category.name}
+                </NavLink>
               </li>
             ))}
           </ul>
