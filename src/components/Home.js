@@ -1,21 +1,21 @@
-import featImg from "../assets/img-main.jpg";
+import featImg from '../assets/img-main.jpg'
 
-export default function Home() {
+export default function Home({ title }) {
   return (
-    <div className="container">
+    <div className='container'>
       <img
-        className="img-feat"
+        className='img-feat'
         src={featImg}
-        alt="Red30 Tech conference attendees on a laptop"
+        alt='Red30 Tech conference attendees on a laptop'
       />
 
-      <h1>Welcome</h1>
+      <h1>{title}</h1>
       <p>
-        This is a fictitious company and conference created by{" "}
+        This is a fictitious company and conference created by{' '}
         <a
-          href="https://www.linkedin.com/feed/"
-          target="_blank"
-          rel="noreferrer noopener"
+          href='https://www.linkedin.com/feed/'
+          target='_blank'
+          rel='noreferrer noopener'
         >
           LinkedIn Corporation, or its affiliates
         </a>
@@ -27,5 +27,5 @@ export default function Home() {
         category.
       </p>
     </div>
-  );
+  )
 }
