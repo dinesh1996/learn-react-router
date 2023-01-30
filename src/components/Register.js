@@ -3,11 +3,15 @@ import { useNavigate } from 'react-router'
 
 export default function Register() {
   const [emailValue, setEmailValue] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const navigate = useNavigate()
 
   function handleSubmit(event) {
     event.preventDefault()
-    navigate('/confirmed', { state: { email: emailValue } })
+    navigate('/confirmed', {
+      state: { email: emailValue, name: `${firstName} ${lastName}` },
+    })
   }
 
   return (
@@ -20,6 +24,24 @@ export default function Register() {
       </p>
       <form onSubmit={handleSubmit}>
         <label>
+          First Name:
+          <input
+            type='text'
+            name='firstName'
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+        </label>
+        <label>
+          Last Name:
+          <input
+            type='text'
+            name='name'
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </label>
+        <label>
           Email:
           <input
             type='text'
@@ -28,6 +50,7 @@ export default function Register() {
             onChange={(e) => setEmailValue(e.target.value)}
           />
         </label>
+
         <input type='submit' value='Submit' />
       </form>
     </div>
