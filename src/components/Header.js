@@ -5,12 +5,14 @@ export default function Header() {
   const getClass = ({ isActive }) => (isActive ? 'nav-active' : null)
   return (
     <header className='container'>
-      <img
-        className='logo'
-        src={logo}
-        alt='Red30 Tech logo'
-        title='Red30 Tech | Home'
-      />
+      <NavLink to={'/'}>
+        <img
+          className='logo'
+          src={logo}
+          alt='Red30 Tech logo'
+          title='Red30 Tech | Home'
+        />
+      </NavLink>
       <nav>
         <NavLink className={getClass} to={'/'}>
           Home
@@ -20,6 +22,9 @@ export default function Header() {
         </NavLink>
         <NavLink className={getClass} to={'/about'}>
           About
+        </NavLink>
+        <NavLink className={getClass} to={'/register'}>
+          Register
         </NavLink>
       </nav>
     </header>

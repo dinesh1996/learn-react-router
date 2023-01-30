@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 export default function Register() {
   const [emailValue, setEmailValue] = useState('')
+  const navigate = useNavigate()
 
   function handleSubmit(event) {
     event.preventDefault()
+    navigate('/confirmed')
   }
 
   return (
