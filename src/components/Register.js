@@ -1,14 +1,14 @@
-import { useRef } from "react";
+import { useState } from 'react'
 
 export default function Register() {
-  const emailRef = useRef(null);
+  const [emailValue, setEmailValue] = useState('')
 
   function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
   }
 
   return (
-    <div className="container">
+    <div className='container'>
       <h1>Register for Red30 Tech</h1>
       <p>
         Make sure to grab your spot for this year's conference! We love
@@ -18,10 +18,15 @@ export default function Register() {
       <form onSubmit={handleSubmit}>
         <label>
           Email:
-          <input type="text" name="email" ref={emailRef} />
+          <input
+            type='text'
+            name='email'
+            value={emailValue}
+            onChange={(e) => setEmailValue(e.target.value)}
+          />
         </label>
-        <input type="submit" value="Submit" />
+        <input type='submit' value='Submit' />
       </form>
     </div>
-  );
+  )
 }
